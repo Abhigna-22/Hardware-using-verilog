@@ -1,0 +1,16 @@
+#create a wire connecting the input an output
+
+module top_module( input in, output out );
+assign out=in;
+endmodule
+
+#Create a module containging 4 wires 
+module top_module( 
+    input a,b,c,
+    output w,x,y,z );
+assign w=a;
+    assign x=b;
+    assign y=b;
+    assign z=c;
+endmodule
+
