@@ -1,3 +1,32 @@
+//D-FF with asrynconous reset
+module top_module (
+    input clk,
+    input d, 
+    input ar,   // asynchronous reset
+    output q);
+    
+    always@(posedge clk or posedge ar)begin
+        if(ar==1)
+            q<=0;
+        else
+        q<=d;
+    end
+endmodule
+
+/D-FF with syncronous reset
+module top_module (
+    input clk,
+    input d, 
+    input r,   // synchronous reset
+    output q);
+    always@(posedge clk)begin
+        if(r==1)
+            q<=0;
+        else
+            q<=d;
+    end
+endmodule
+
 //Create 8 D flip-flops with active high synchronous reset. All DFFs should be triggered by the positive edge of clk.
 module top_module (
     input clk,
